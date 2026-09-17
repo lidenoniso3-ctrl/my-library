@@ -5,7 +5,7 @@ backend:
 
 locale: ar
 media_folder: "assets/uploads"
-public_folder: "assets/uploads"
+public_folder: "/my-library/assets/uploads"
 
 site_url: https://lidenoniso3-ctrl.github.io/my-library
 display_url: https://lidenoniso3-ctrl.github.io/my-library
