@@ -1,31 +1,3 @@
 {
-  "items": [
-    {
-      "title": "كتاب تعلم البرمجة بلغة Python",
-      "description": "دليل شامل للمبتدئين يشرح أساسيات بايثون خطوة بخطوة مع أمثلة عملية وتمارين تفاعلية.",
-      "category": "كتب PDF",
-      "image": "/assets/uploads/python-book.jpg",
-      "file": "/files/python-book.pdf",
-      "size": "8.4 MB",
-      "version": "2.1"
-    },
-    {
-      "title": "قالب موقع شخصي احترافي",
-      "description": "قالب HTML و CSS جاهز للاستخدام، متجاوب بالكامل مع دعم الوضع الليلي والتحميل السريع.",
-      "category": "قوالب تصميم",
-      "image": "/assets/uploads/portfolio-template.jpg",
-      "file": "/files/portfolio-template.zip",
-      "size": "1.2 MB",
-      "version": "1.0"
-    },
-    {
-      "title": "خط عربي مجاني - نسخة محدثة",
-      "description": "خط عربي حديث بتصميم أنيق، مناسب للنصوص الطويلة والعناوين، مرخص للاستخدام التجاري.",
-      "category": "خطوط مجانية",
-      "image": "/assets/uploads/arabic-font.jpg",
-      "file": "/files/arabic-font.zip",
-      "size": "450 KB",
-      "version": "3.0"
-    }
-  ]
+  "items": []
 }

@@ -1,15 +1,14 @@
 backend:
   name: github
-  repo: lidenoniso3-ctrl/lidenoniso3-ctrl.github.io
+  repo: lidenoniso3-ctrl/my-library
   branch: main
-  # تم إزالة base_url نهائيًا لأننا سنستخدم طريقة PAT
 
 locale: ar
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "assets/uploads"
 
-site_url: https://lidenoniso3-ctrl.github.io
-display_url: https://lidenoniso3-ctrl.github.io
+site_url: https://lidenoniso3-ctrl.github.io/my-library
+display_url: https://lidenoniso3-ctrl.github.io/my-library
 
 collections:
   - name: "products"

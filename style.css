@@ -1,4 +1,3 @@
-/* ==== المتغيرات والأساسيات ==== */
 :root {
   --bg: #f7f8fc;
   --bg-elevated: #ffffff;
@@ -55,7 +54,6 @@ body {
   padding: 0 20px;
 }
 
-/* ==== شريط التنقل ==== */
 .navbar {
   position: sticky;
   top: 0;
@@ -140,7 +138,6 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-/* ==== قسم Hero ==== */
 .hero {
   position: relative;
   padding: 80px 20px 60px;
@@ -192,7 +189,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* ==== صندوق البحث ==== */
 .search-box {
   position: relative;
   max-width: 500px;
@@ -229,10 +225,7 @@ body {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 15%, transparent);
 }
 
-/* ==== التصنيفات ==== */
-.categories-section {
-  padding: 20px 0 30px;
-}
+.categories-section { padding: 20px 0 30px; }
 
 .categories {
   display: flex;
@@ -266,7 +259,6 @@ body {
   box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
-/* ==== شبكة المنتجات ==== */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -397,7 +389,6 @@ body {
 
 .download-btn svg { width: 18px; height: 18px; }
 
-/* ==== حالة التحميل والفارغ ==== */
 .loading {
   grid-column: 1 / -1;
   text-align: center;
@@ -424,7 +415,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* ==== التذييل ==== */
 .footer {
   border-top: 1px solid var(--border);
   padding: 30px 0;
@@ -433,7 +423,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* ==== استجابة الجوال ==== */
 @media (max-width: 640px) {
   .hero { padding: 50px 16px 40px; }
   .admin-link span { display: none; }

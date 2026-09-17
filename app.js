@@ -1,4 +1,3 @@
-// ==== إعدادات عامة ====
 const DATA_URL = "data/products.json";
 const PLACEHOLDER_ICONS = {
   "كتب PDF": "📕",
@@ -12,7 +11,6 @@ let allProducts = [];
 let activeCategory = "الكل";
 let searchQuery = "";
 
-// ==== تهيئة الوضع الليلي ====
 function initTheme() {
   const saved = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -27,7 +25,6 @@ function initTheme() {
   });
 }
 
-// ==== تحميل البيانات ====
 async function loadProducts() {
   try {
     const res = await fetch(DATA_URL, { cache: "no-cache" });
@@ -43,7 +40,6 @@ async function loadProducts() {
   }
 }
 
-// ==== عرض التصنيفات ====
 function renderCategories() {
   const cats = ["الكل", ...new Set(allProducts.map(p => p.category).filter(Boolean))];
   const container = document.getElementById("categories");
@@ -63,7 +59,6 @@ function renderCategories() {
   });
 }
 
-// ==== تصفية المنتجات ====
 function getFiltered() {
   return allProducts.filter(p => {
     const matchCat = activeCategory === "الكل" || p.category === activeCategory;
@@ -76,7 +71,6 @@ function getFiltered() {
   });
 }
 
-// ==== عرض المنتجات ====
 function renderProducts() {
   const grid = document.getElementById("productsGrid");
   const empty = document.getElementById("emptyState");
@@ -125,14 +119,12 @@ function renderProducts() {
   }).join("");
 }
 
-// ==== حماية من XSS ====
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, s => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   }[s]));
 }
 
-// ==== ربط البحث ====
 function initSearch() {
   const input = document.getElementById("searchInput");
   let timer;
@@ -145,7 +137,6 @@ function initSearch() {
   });
 }
 
-// ==== تشغيل ====
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
   initTheme();
