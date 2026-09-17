@@ -27,7 +27,8 @@ collections:
             summary: "{{fields.title}} — {{fields.category}}"
             fields:
               - { label: "اسم المنتج", name: "title", widget: "string", hint: "عنوان واضح وجاذب" }
-              - { label: "الوصف", name: "description", widget: "text", required: false, hint: "شرح مختصر عن المنتج وفوائده" }
+              - { label: "وصف قصير", name: "description", widget: "text", required: false, hint: "يظهر في البطاقة (2-3 أسطر)" }
+              - { label: "وصف طويل", name: "longDescription", widget: "text", required: false, hint: "شرح مفصل يظهر في صفحة المنتج" }
               - label: "التصنيف"
                 name: "category"
                 widget: "select"
@@ -39,5 +40,17 @@ collections:
                   - "أخرى"
               - { label: "صورة الغلاف", name: "image", widget: "image", required: false, hint: "يفضل 1200x750 بكسل" }
               - { label: "الملف المرفق", name: "file", widget: "file", hint: "ارفع الكتاب، القالب، أو الخط هنا" }
+              - label: "المكونات / المحتويات"
+                name: "components"
+                widget: "list"
+                required: false
+                hint: "مثال: الفصل الأول، الفصل الثاني..."
+                field: { label: "مكوّن", name: "text", widget: "string" }
+              - label: "المميزات"
+                name: "features"
+                widget: "list"
+                required: false
+                hint: "مثال: سهل القراءة، جودة عالية..."
+                field: { label: "ميزة", name: "text", widget: "string" }
               - { label: "الحجم", name: "size", widget: "string", required: false, hint: "مثال: 8.4 MB" }
               - { label: "الإصدار", name: "version", widget: "string", required: false, hint: "مثال: 1.0" }

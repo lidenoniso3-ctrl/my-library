@@ -1,13 +1,3 @@
 {
-  "items": [
-    {
-      "title": "متوج التجربي",
-      "description": "منتوج التجربي جديد",
-      "category": "كتب PDF",
-      "image": "/my-library/assets/uploads/images (2).jpg",
-      "file": "/my-library/assets/uploads/combined.pdf",
-      "size": "1.2",
-      "version": "1.0"
-    }
-  ]
+  "items": []
 }

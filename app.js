@@ -43,6 +43,7 @@ async function loadProducts() {
 function renderCategories() {
   const cats = ["الكل", ...new Set(allProducts.map(p => p.category).filter(Boolean))];
   const container = document.getElementById("categories");
+  if (!container) return;
   container.innerHTML = cats.map(cat => `
     <button class="category-pill ${cat === activeCategory ? "active" : ""}" data-cat="${cat}">
       ${cat}
@@ -74,16 +75,18 @@ function getFiltered() {
 function renderProducts() {
   const grid = document.getElementById("productsGrid");
   const empty = document.getElementById("emptyState");
+  if (!grid) return;
   const items = getFiltered();
 
   if (!items.length) {
     grid.innerHTML = "";
-    empty.hidden = false;
+    if (empty) empty.hidden = false;
     return;
   }
-  empty.hidden = true;
+  if (empty) empty.hidden = true;
 
   grid.innerHTML = items.map(p => {
+    const realIndex = allProducts.indexOf(p);
     const icon = PLACEHOLDER_ICONS[p.category] || "📦";
     const imageHTML = p.image
       ? `<img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" />`
@@ -96,7 +99,7 @@ function renderProducts() {
     ].filter(Boolean).join("");
 
     return `
-      <article class="product-card">
+      <article class="product-card" data-index="${realIndex}" onclick="goToProduct(${realIndex})" role="link" tabindex="0">
         <div class="product-image">
           ${imageHTML}
           ${p.category ? `<span class="product-badge">${escapeHtml(p.category)}</span>` : ""}
@@ -105,7 +108,7 @@ function renderProducts() {
           <h3 class="product-title">${escapeHtml(p.title || "بدون عنوان")}</h3>
           ${p.description ? `<p class="product-description">${escapeHtml(p.description)}</p>` : ""}
           ${metaHTML ? `<div class="product-meta">${metaHTML}</div>` : ""}
-          <a class="download-btn" href="${p.file || "#"}" download target="_blank" rel="noopener">
+          <a class="download-btn" href="${p.file || "#"}" download onclick="event.stopPropagation()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
               <polyline points="7 10 12 15 17 10"/>
@@ -119,6 +122,10 @@ function renderProducts() {
   }).join("");
 }
 
+function goToProduct(index) {
+  window.location.href = `product.html?id=${index}`;
+}
+
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, s => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -127,6 +134,7 @@ function escapeHtml(str) {
 
 function initSearch() {
   const input = document.getElementById("searchInput");
+  if (!input) return;
   let timer;
   input.addEventListener("input", e => {
     clearTimeout(timer);
@@ -138,7 +146,8 @@ function initSearch() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   initTheme();
   initSearch();
   loadProducts();
