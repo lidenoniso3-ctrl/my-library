@@ -1,16 +1,16 @@
 {
   "items": [
     {
-      "title": "فيديو تعلمي",
-      "description": "في هدا الفيديو اهم مراحل الفيديوهات",
-      "longDescription": "يعتبر الفيديوهات الموجهة لي طريقة فهم النظام ان المر سهل    \n\n\n\n\n\n\n\n\n\n\nبحيث يمكن ان تفهم",
+      "title": "كود بايثون تعدبل على الصور",
+      "description": "يسمح بي الصناعة",
+      "longDescription": "",
       "category": "أخرى",
-      "image": "/my-library/assets/uploads/slide_02.png",
-      "file": "/my-library/assets/uploads/كيف يعمل ناقل الحركة؟.mp4",
+      "image": "/my-library/assets/uploads/images (2).jpg",
+      "file": "/my-library/assets/uploads/photo.py",
       "components": [],
       "features": [],
-      "size": "2.5",
-      "version": "1.0"
+      "size": "",
+      "version": ""
     }
   ]
 }
